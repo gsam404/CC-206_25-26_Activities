@@ -1,49 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+// MOBILE MENU
+const menuBtn = document.getElementById("menuBtn");
+const navMenu = document.getElementById("navMenu");
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSector = document.querySelector(targetId);
+menuBtn.onclick = () => {
+    navMenu.classList.toggle("active");
+};
 
-            window.scrollTo({
-                top: targetSector.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        });
-    });
+// TYPING EFFECT
+const roles = ["SOFTWARE DEVELOPER", "UI DESIGNER", "STUDENT"];
+let i = 0;
+let j = 0;
+let currentRole = "";
+let isDeleting = false;
 
-    // Reveal elements on scroll
-    const observerOptions = {
-        threshold: 0.1
-    };
+function type(){
+    currentRole = roles[i];
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.glass').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'all 0.6s ease-out';
-        observer.observe(card);
-    });
-
-    // Simple Form Submission Handling
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thanks for reaching out! (This is a template, so no email was actually sent)');
-            contactForm.reset();
-        });
+    if(!isDeleting){
+        document.getElementById("typing").textContent =
+        currentRole.substring(0,j++);
+        if(j > currentRole.length){
+            isDeleting = true;
+            setTimeout(type,1000);
+            return;
+        }
+    }else{
+        document.getElementById("typing").textContent =
+        currentRole.substring(0,j--);
+        if(j==0){
+            isDeleting=false;
+            i=(i+1)%roles.length;
+        }
     }
+    setTimeout(type,100);
+}
+type();
+
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    alert("Message Sent! (This is just a demo)");
 });

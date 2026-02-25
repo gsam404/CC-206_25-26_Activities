@@ -1,135 +1,150 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Student Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
+  <body>
+    <!-- NAVBAR -->
     <header>
-        <nav>
-            <div class="logo">Student<span> Portfolio</span></div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#personal">About Me</a></li>
-                <li><a href="#professional">Professional</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <div class="logo">MY<span>PORTFOLIO</span></div>
+
+      <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="menu-btn" id="menuBtn">☰</div>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="profile-container">
-                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=256&h=256&auto=format&fit=crop"
-                        alt="Student Profile" class="profile-img">
-                </div>
-                <h1>Hi, I'm <span class="highlight">Samantha</span></h1>
-                <p>College Student | Aspiring Software Engineer</p>
-                <div class="hero-buttons">
-                    <a href="#professional" class="btn primary">View Work</a>
-                    <a href="#personal" class="btn secondary">Know Me Better</a>
-                </div>
-            </div>
-        </section>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h4>Hello!</h4>
+        <h1>I'M <span>SAMANTHA</span></h1>
+        <h2>I'M A <span id="typing"></span></h2>
 
-        <section id="personal" class="section">
-            <h2 class="section-title">Personal Side</h2>
-            <div class="personal-grid">
-                <div class="card glass">
-                    <h3>Hobbies</h3>
-                    <ul>
-                        <li>Photography </li>
-                        <li>Listening to Music </li>
-                        <li>Book Reading </li>
-                    </ul>
-                </div>
-                <div class="card glass">
-                    <h3>Likes</h3>
-                    <ul>
-                        <li>Cats</li>
-                        <li>Lumpia</li>
-                        <li>Quiet Afternoons</li>
-                    </ul>
-                </div>
-                <div class="card glass">
-                    <h3>Dislikes</h3>
-                    <ul>
-                        <li>7 P.M. Classes</li>
-                        <li>Slow Internet</li>
-                        <li>Waking up too early</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <p>
+          Hello! I’m a Computer Science student who loves engaging with
+          technology and continuously learning new skills.
+        </p>
 
-        <section id="professional" class="section">
-            <h2 class="section-title">Professional Journey</h2>
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
 
-            <div class="skills-container">
-                <h3>Technical Skills</h3>
-                <div class="skills-grid">
-                    <span class="skill-badge">HTML/CSS</span>
-                    <span class="skill-badge">JavaScript</span>
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">SQL</span>
-                    <span class="skill-badge">Git</span>
-                </div>
-            </div>
+      <div class="hero-img">
+        <img src="images/mypic.jpg" alt="profile" />
+      </div>
+    </section>
 
-            <div class="projects-grid">
-                <div class="project-card glass">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=800&auto=format&fit=crop"
-                            alt="Project One">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A simple web application to manage student tasks and schedules.</p>
-                        <a href="#" class="project-link">Learn More →</a>
-                    </div>
-                </div>
-                <div class="project-card glass">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536ad37?q=80&w=800&auto=format&fit=crop"
-                            alt="Project Two">
-                    </div>
-                    <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>A data analysis tool built with Python to visualize neighborhood stats.</p>
-                        <a href="#" class="project-link">Learn More →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/mypic.jpg" alt="" />
+      </div>
 
-        <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-card glass">
-                <p>I'm always open to talking about new projects, creative ideas or opportunities to be part of your
-                    visions.</p>
-                <form id="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I’m a Computer Science student with a genuine passion for technology
+          and software development. I enjoy turning ideas into working
+          applications, writing clean and efficient code, and continuously
+          improving my skills in programming, problem-solving, and system
+          design. For me, tech isn’t just something I study — it’s something I
+          actively explore, experiment with, and grow through every day as I
+          work toward becoming a Software Engineer.
+        </p>
+
+        <div class="stats">
+          <div>
+            <h3>3+</h3>
+            <p>Projects</p>
+          </div>
+          <div>
+            <h3>1+</h3>
+            <p>Years Learning</p>
+          </div>
+          <div>
+            <h3>100%</h3>
+            <p>Motivation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <h2>Recent Projects</h2>
+
+      <div class="project-container">
+        <div class="card">
+          <img src="https://picsum.photos/400/250?1" />
+          <h3>Plannr</h3>
+          <p>Web design for organization and productivity.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250?2" />
+          <h3>WVSU E-Lib</h3>
+          <p>Sample web app concept.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://picsum.photos/400/250?3" />
+          <h3>Bank Managment System</h3>
+          <p>Application for managing bank operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <h2>Services</h2>
+
+      <div class="service-box">
+        <div class="service">
+          <h3>Web Design</h3>
+          <p>I create modern responsive websites.</p>
+        </div>
+
+        <div class="service">
+          <h3>UI/UX Design</h3>
+          <p>User friendly interface designs.</p>
+        </div>
+
+        <div class="service">
+          <h3>Basic Programming</h3>
+          <p>Beginner level web applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
     <footer>
-        <p>&copy; <span id="year"></span> Samantha . All rights reserved.</p>
+      <p>© 2026 My Portfolio | All Rights Reserved</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
