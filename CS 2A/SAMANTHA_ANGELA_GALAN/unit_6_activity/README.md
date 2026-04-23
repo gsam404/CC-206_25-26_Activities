@@ -1,4 +1,4 @@
-# unit_6_activity
+# GALAN_UNIT_6_ACTIVITY
 
 A new Flutter project.
 
